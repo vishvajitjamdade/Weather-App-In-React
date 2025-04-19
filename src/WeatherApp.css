@@ -1,0 +1,71 @@
+/* WeatherApp.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.weather-app {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #b3e5fc, #ffffff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.app-title {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #0d47a1;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  animation: slideInTop 0.8s ease-out;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  animation: slideInBottom 0.9s ease-out;
+}
+
+@media (min-width: 768px) {
+  .weather-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInTop {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInBottom {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Reusable fade-in animation class */
+.fade-in {
+  animation: fadeIn 1.2s ease-in-out;
+}
+.slide-in-top {
+  animation: slideInTop 0.8s ease-out;
+}
+.slide-in-bottom {
+  animation: slideInBottom 0.9s ease-out;
+}
